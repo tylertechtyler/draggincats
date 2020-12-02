@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Drag and Drop Kitties</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+  window.onload = function(){
+    alert('Kitties cant swim! Save them by dragging them to the other side!');
+}
+  
+   function allowDrop(ev)
+  {
+  ev.preventDefault();
+   }
+
+  function drag(ev)
+  {
+    ev.dataTransfer.setData("text",ev.target.id);
+   }
+
+  function drop(ev)
+   {
+    var data=ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    ev.preventDefault();
+   }
+</script>
+</head>
+<body>
+<div class="background">
+  <div class="water"></div>
+</div>
+<svg>
+  <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+    <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.05 0.07"></feTurbulence>
+    <feDisplacementmap scale="20" in="SourceGraphic"></feDisplacementmap>
+    <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s"
+    keyTimes="0;0.5;1" values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"></animate>
+  </filter>
+</svg>
+
+<content class="wrapper">
+
+  <div class="images">
+    <img id="drag1" src="kitty.png" alt="kitty" draggable="true"
+    ondragstart="drag(event)" width="276" height="125" />
+    <img id="drag2" src="kitty2.png" alt="kitty2" draggable="true"
+    ondragstart="drag(event)" width="276" height="125" />
+    <img id="drag4" src="kitty3.png" alt="kitty3" draggable="true"
+    ondragstart="drag(event)" width="276" height="125" />
+  </div>
+
+  <div class="boxes">
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+  </div>
+
+
+</content>
+
+</body>
+</html>

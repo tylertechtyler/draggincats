@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(river.jpg);
+    background-size: cover;
+}
+.background .water {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(river2.png);
+    background-size: cover;
+    filter: url("#turbulence");
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    
+}
+.images {
+    position: absolute;
+    left: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.boxes {
+    position: absolute;
+    right: 0;
+
+}
+#div1 {
+    
+    width:350px;
+    height:130px;
+    margin: 10px; 
+    padding:10px;
+    border: 10px solid #41e920;
+    border-radius: 5px;
+    
+}
+#div2 {
+    width:350px;
+    height:130px;
+    margin: 10px; 
+    padding:10px;
+    border:10px solid #2088e9;
+    border-radius: 5px;
+}
+  #div3 {
+      width:350px;
+      height:130px;
+      margin: 10px; 
+      padding:10px;
+      border:10px solid #41e920;
+      border-radius: 5px;
+  }
+  #div4 {
+    width:350px;
+    height:130px;
+    margin: 10px; 
+    padding:10px;
+    border:10px solid #e9a320;
+}
